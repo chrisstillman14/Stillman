@@ -1,7 +1,8 @@
 # Stillman
 ≈
 https://daringfireball.net/projects/markdown/syntax  
-## Vim Commands  
+## Vim Commands
+==============================================================================  
 * Do you even vim, bro?  
 * i = insert text  
 * escape = stop insert  
@@ -9,6 +10,7 @@ https://daringfireball.net/projects/markdown/syntax
 * quit! = quit without save  
 
 ## Adding Commit  
+==============================================================================
 * git add *  
 * git commit -m " "  
 * git push origin master  
