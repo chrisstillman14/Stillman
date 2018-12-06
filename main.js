@@ -14,7 +14,7 @@ function setup() {
 function draw() {
     background(0,255,0);
     sq.display();
-    for(var i = 0; i < numFood; i++) {
+    for(var i = 0; i < feed.length; i++) {
         feed[i].display();
     }
   
@@ -29,10 +29,11 @@ function Food(x, y) {
     this.y = y;
     this.color = color(255, 0, 0);
     this.foodSize = 50;
+    
     this.display = function() {
         fill(this.color);
         ellipse(this.x, this.y, 50, 50);
-    }
+    };
 }
 
 function Pumpkin() {
@@ -47,13 +48,13 @@ function Pumpkin() {
     
     this.eat = function() {
         console.log('try to eat');
-        for(var i = 0; i < numFood; i++) {
+        for(var i = 0; i < feed.length; i++) {
             var food = feed[i];
             var d = this.getDistance(food);
             var r1 = food.foodSize / 2;
             var r2 = diameter / 2;
             if (r1 + r2 > d) {
-                feed.splice(i - 1);
+                feed.splice(i, 1);
                 
             }
         }
