@@ -79,48 +79,47 @@ function Pumpkin() {
         if(!ate) {
             diameter --;
         }
+        if (diameter < 40) {
+                diameter = 200;
+            }
         x = mouseX;
         y = mouseY;
-        //lefthorn
+        //horns
         fill('#000000');
-        triangle(x-15, y-50, x-75, y-120, x-55, y-50);
-        //righthorn
-        fill('#000000');
-        triangle(x+15, y-50, x+75, y-120, x+55, y-50);
+        triangle(x-diameter*3/40, y-diameter/4, x-diameter*3/8, y-diameter*3/5, x-diameter*11/40, y-diameter/4);
+        triangle(x+diameter*3/40, y-diameter/4, x+diameter*3/8, y-diameter*3/5, x+diameter*11/40, y-diameter/4);
         //face
         noStroke();
         fill('#f77900');
         ellipse(x, y, diameter + 50, diameter);
-        //righteye
+        //eyes
         fill('#000000');
-        triangle(x+75, y-10, x+55, y-50, x+35, y-10);
-        //lefteye
-        fill('#000000');
-        triangle(x-35, y-10, x-55, y-50, x-75, y-10);
+        triangle(x+diameter*3/8, y-diameter/20, x+diameter*11/40, y-diameter/4, x+diameter*7/40, y-diameter/20);
+        triangle(x-diameter*7/40, y-diameter/20, x-diameter*11/40, y-diameter/4, x-diameter*3/8, y-diameter/20);
         //nose
         fill('#000000');
-        triangle(x+15, y, x, y+30, x-15, y);
+        triangle(x+diameter*3/40, y, x, y+diameter*3/20, x-diameter*3/40, y);
         //tounge
         fill('#000000')
-        arc(x, y+40, 120, 90, 0, PI, PIE);
+        arc(x, y+diameter/5, diameter*3/5, diameter*9/20, 0, PI, PIE); //problem
         //tooth
         fill('#f77900');
-        triangle(x+30, y+30, x+15, y+60, x-5, y+30);
+        triangle(x+diameter*3/20, y+diameter*3/20, x+diameter*3/40, y+diameter*3/10, x-diameter/40, y+diameter*3/20);
         //tooth
         fill('#f77900');
-        triangle(x-30, y+30, x-15, y+60, x+5, y+30);
+        triangle(x-diameter*3/20, y+diameter*3/20, x-diameter*3/40, y+diameter*3/10, x+diameter/40, y+diameter*3/20);
          //tooth
         fill('#f77900');
-        triangle(x+50, y+30, x+35, y+60, x+20, y+30);
+        triangle(x+diameter/4, y+diameter*3/20, x+diameter*7/40, y+diameter*3/10, x+diameter/10, y+diameter*3/20);
         //tooth
         fill('#f77900');
-        triangle(x-50, y+30, x-35, y+60, x-20, y+30);
+        triangle(x-diameter/4, y+diameter*3/20, x-diameter*7/40, y+diameter*3/10, x-diameter/10, y+diameter*3/20);
         //tooth
         fill('#f77900');
-        triangle(x+70, y+30, x+55, y+60, x+40, y+30);
+        triangle(x+diameter*7/20, y+diameter*3/20, x+diameter*11/40, y+diameter*3/10, x+diameter/5, y+diameter*3/20);
         //tooth
         fill('#f77900');
-        triangle(x-70, y+30, x-55, y+60, x-40, y+30);
+        triangle(x-diameter*7/20, y+diameter*3/20, x-diameter*11/40, y+diameter*3/10, x-diameter/5, y+diameter*3/20);
     };
 }
 
