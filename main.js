@@ -12,7 +12,7 @@ function setup() {
 }
 
 function draw() {
-    background(0,255,0);
+    background (47, 20, 82);
     sq.display();
     for(var i = 0; i < feed.length; i++) {
         feed[i].display();
@@ -27,8 +27,9 @@ function mousePressed() {
 function Food(x, y) {
     this.x = x;
     this.y = y;
-    this.color = color(255, 0, 0);
+    this.color = color(140, 254, 144);
     this.foodSize = 50;
+    this.boxShadow
     
     this.display = function() {
         fill(this.color);
@@ -40,27 +41,44 @@ function Pumpkin() {
     var x = mouseX;
     var y = mouseY;
     var diameter = 200;
+    var ate = false;
+    
+    
+    
     
     this.getDistance = function(other) {
         var dist = Math.sqrt(Math.pow(x - other.x, 2) + Math.pow(y - other.y, 2));
         return dist;
     }
     
+    this.score = function() {
+        var score = feed.count;
+        console.log(score);
+    }
+    
     this.eat = function() {
-        console.log('try to eat');
-        for(var i = 0; i < feed.length; i++) {
+        ate = true;
+        setTimeout(function() {
+            ate = false;
+        }, 2000);
+        for(var i = feed.length - 1; i >= 0; i--) {
             var food = feed[i];
             var d = this.getDistance(food);
             var r1 = food.foodSize / 2;
             var r2 = diameter / 2;
             if (r1 + r2 > d) {
+                diameter = 200;
                 feed.splice(i, 1);
+                feed.push(new Food(random(width), random(height)));
                 
             }
         }
     }
     
     this.display = function() {
+        if(!ate) {
+            diameter --;
+        }
         x = mouseX;
         y = mouseY;
         //lefthorn
