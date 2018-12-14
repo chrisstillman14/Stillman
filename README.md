@@ -13,7 +13,9 @@ https://daringfireball.net/projects/markdown/syntax
 ==============================================================================
 * git add *  
 * git commit -m " "  
-* git push origin master  
+* git push origin master
+
+## Random Comments  
 Mr Clark is making me have 10 README Commits  
 My project is a pumpkin who eats food  
 He enjoys eating rainbow food and getting bigger
